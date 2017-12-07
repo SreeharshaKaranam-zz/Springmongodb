@@ -1,0 +1,4 @@
+com\shivashankaripearlapt\details\repository\AptRepository.class
+com\shivashankaripearlapt\details\controller\AptController.class
+com\shivashankaripearlapt\details\model\Apartment.class
+com\shivashankaripearlapt\details\SpringBootApplicationStart.class
