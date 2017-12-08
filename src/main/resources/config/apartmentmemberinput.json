@@ -1,0 +1,19 @@
+{
+	
+	"blockNumber":"S5",
+	"primaryMemberName":"Ravi",
+	"secondaryMemberName":"560061",
+	"mobileNumbers":[ "987645321","9087654321"],
+	"occupyStatus":"true",
+	"vehicleList":[{
+		"registrationNumber":"KA 6531",
+		"vehicleType":"Bike",
+		"description":"Pulsar"
+	},
+	{
+		"registrationNumber":"KA 9570",
+		"vehicleType":"Car",
+		"description":"Ertiga"
+	}
+	]
+}
