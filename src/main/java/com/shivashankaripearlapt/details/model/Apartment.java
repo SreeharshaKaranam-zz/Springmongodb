@@ -6,44 +6,42 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "Apartment")
 public class Apartment {
 
-	
+	private String name;
+	private String address;
 	@Id
-	private String blockNumber;
-	private String primaryMemberName;
-	private String secondaryMemberName;
-	private String mobileNumber;
+	private int pincode;
+	private int noOfFlats;
 
-
-	public String getBlockNumber() {
-		return blockNumber;
+	public String getName() {
+		return name;
 	}
 
-	public void setBlockNumber(String blockNumber) {
-		this.blockNumber = blockNumber;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getPrimaryMemberName() {
-		return primaryMemberName;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setPrimaryMemberName(String primaryMemberName) {
-		this.primaryMemberName = primaryMemberName;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
-	public String getSecondaryMemberName() {
-		return secondaryMemberName;
+	public int getPincode() {
+		return pincode;
 	}
 
-	public void setSecondaryMemberName(String secondaryMemberName) {
-		this.secondaryMemberName = secondaryMemberName;
+	public void setPincode(int pincode) {
+		this.pincode = pincode;
 	}
 
-	public String getMobileNumber() {
-		return mobileNumber;
+	public int getNoOfFlats() {
+		return noOfFlats;
 	}
 
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
+	public void setNoOfFlats(int noOfFlats) {
+		this.noOfFlats = noOfFlats;
 	}
 
 }
