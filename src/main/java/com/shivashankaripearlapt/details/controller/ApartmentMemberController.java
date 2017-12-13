@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -115,15 +116,12 @@ public class ApartmentMemberController {
 	 * GET /display --> display all the member by blockNumber from the database.
 	 */
 	@RequestMapping(method = RequestMethod.GET, value = "/displayallmembers")
-	public Map<String, Object> displayAllMembers() {
+	@CrossOrigin(origins = "http://localhost:9000")
+	public List<ApartmentMember> displayAllMembers() {
 		logger.info("In displayallmembers method:");
 		List<ApartmentMember> apartmentMemberList = aptRepository
 				.findAll(new Sort(Sort.Direction.ASC, "id"));
-		Map<String, Object> dataMap = new HashMap<String, Object>();
-		dataMap.put("message", "Members details");
-		dataMap.put("status", "success");
-		dataMap.put("AptMemberList", apartmentMemberList);
-		return dataMap;
+		return apartmentMemberList;
 	}
 
 	/**
