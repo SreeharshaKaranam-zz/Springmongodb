@@ -88,6 +88,7 @@ public class ApartmentMemberController {
 	 * DELETE /delete --> delete the existing member details in the database.
 	 */
 	@RequestMapping(method = RequestMethod.DELETE, value = "/deletemember/{blockNumber}")
+	@CrossOrigin(origins = "http://localhost:9000")
 	public Map<String, Object> deleteMember(@PathVariable String blockNumber) {
 
 		logger.info("In deleteMember method:");
