@@ -1,10 +1,10 @@
 {
 	
-	"blockNumber":"S5",
-	"primaryMemberName":"Ravi",
-	"secondaryMemberName":"560061",
+	"blockNumber":"G5",
+	"primaryMemberName":"Rao",
+	"secondaryMemberName":"Rajesh",
 	"mobileNumbers":[ "987645321","9087654321"],
-	"occupyStatus":"true",
+	"occupyStatus":"Yes",
 	"vehicleList":[{
 		"registrationNumber":"KA 6531",
 		"vehicleType":"Bike",

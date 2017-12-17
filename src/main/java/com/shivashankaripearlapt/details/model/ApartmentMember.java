@@ -13,7 +13,7 @@ public class ApartmentMember {
 	private String primaryMemberName;
 	private String secondaryMemberName;
 	private List<String> mobileNumbers;
-	private boolean occupyStatus;
+	private String occupyStatus;
 	private List<MotorVehicleDetails> vehicleList;
 
 	public String getBlockNumber() {
@@ -39,12 +39,14 @@ public class ApartmentMember {
 	public void setSecondaryMemberName(String secondaryMemberName) {
 		this.secondaryMemberName = secondaryMemberName;
 	}
+	
+	
 
-	public boolean isOccupyStatus() {
+	public String getOccupyStatus() {
 		return occupyStatus;
 	}
 
-	public void setOccupyStatus(boolean occupyStatus) {
+	public void setOccupyStatus(String occupyStatus) {
 		this.occupyStatus = occupyStatus;
 	}
 

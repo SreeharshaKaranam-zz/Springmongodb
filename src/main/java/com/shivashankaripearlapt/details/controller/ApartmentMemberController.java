@@ -38,6 +38,7 @@ public class ApartmentMemberController {
 	 * database.
 	 */
 	@RequestMapping(method = RequestMethod.POST, value = "/createmember")
+	@CrossOrigin(origins = "http://localhost:9000")
 	public Map<String, Object> createMember(
 			@RequestBody ApartmentMember apartmentMember) {
 
@@ -54,6 +55,7 @@ public class ApartmentMemberController {
 	 * database.
 	 */
 	@RequestMapping(method = RequestMethod.PUT, value = "/modifymember/{blockNumber}")
+	@CrossOrigin(origins = "http://localhost:9000")
 	public Map<String, Object> updateMember(@PathVariable String blockNumber,
 			@RequestBody ApartmentMember apartmentMember) {
 
@@ -68,7 +70,7 @@ public class ApartmentMemberController {
 		apt.setMobileNumbers(mobileNumberList);
 		apt.setPrimaryMemberName(apartmentMember.getPrimaryMemberName());
 		apt.setSecondaryMemberName(apartmentMember.getSecondaryMemberName());
-		apt.setOccupyStatus(apartmentMember.isOccupyStatus());
+		apt.setOccupyStatus(apartmentMember.getOccupyStatus());
 		List<MotorVehicleDetails> motorVehicleDetailsList=new ArrayList<MotorVehicleDetails>();
 		for(MotorVehicleDetails motorVehicleDetails:apartmentMember.getVehicleList())
 		{
@@ -103,14 +105,11 @@ public class ApartmentMemberController {
 	 * GET /read --> Read a member by blockNumber from the database.
 	 */
 	@RequestMapping(method = RequestMethod.GET, value = "/displaymember/{blockNumber}")
-	public Map<String, Object> displayMember(@PathVariable String blockNumber) {
+	@CrossOrigin(origins = "http://localhost:9000")
+	public ApartmentMember displayMember(@PathVariable String blockNumber) {
 		logger.info("In displaymember method:");
 		ApartmentMember apartmentMember = aptRepository.findOne(blockNumber);
-		Map<String, Object> dataMap = new HashMap<String, Object>();
-		dataMap.put("message", "Member found");
-		dataMap.put("status", "success");
-		dataMap.put("AptMemberinfo", apartmentMember);
-		return dataMap;
+		return apartmentMember;
 	}
 
 	/**
