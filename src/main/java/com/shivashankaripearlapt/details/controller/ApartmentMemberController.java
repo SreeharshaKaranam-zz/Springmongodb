@@ -20,6 +20,7 @@ import com.shivashankaripearlapt.details.model.ApartmentMember;
 import com.shivashankaripearlapt.details.model.MotorVehicleDetails;
 import com.shivashankaripearlapt.details.repository.ApartmentMemberRepository;
 
+@CrossOrigin(origins = {"http://localhost:8080","http://10.96.114.108:8080"})
 @RestController
 @RequestMapping("/apt")
 public class ApartmentMemberController {
@@ -38,7 +39,6 @@ public class ApartmentMemberController {
 	 * database.
 	 */
 	@RequestMapping(method = RequestMethod.POST, value = "/createmember")
-	@CrossOrigin(origins = "http://localhost:9000")
 	public Map<String, Object> createMember(
 			@RequestBody ApartmentMember apartmentMember) {
 
@@ -55,7 +55,7 @@ public class ApartmentMemberController {
 	 * database.
 	 */
 	@RequestMapping(method = RequestMethod.PUT, value = "/modifymember/{blockNumber}")
-	@CrossOrigin(origins = "http://localhost:9000")
+	
 	public Map<String, Object> updateMember(@PathVariable String blockNumber,
 			@RequestBody ApartmentMember apartmentMember) {
 
@@ -90,7 +90,6 @@ public class ApartmentMemberController {
 	 * DELETE /delete --> delete the existing member details in the database.
 	 */
 	@RequestMapping(method = RequestMethod.DELETE, value = "/deletemember/{blockNumber}")
-	@CrossOrigin(origins = "http://localhost:9000")
 	public Map<String, Object> deleteMember(@PathVariable String blockNumber) {
 
 		logger.info("In deleteMember method:");
@@ -105,7 +104,6 @@ public class ApartmentMemberController {
 	 * GET /read --> Read a member by blockNumber from the database.
 	 */
 	@RequestMapping(method = RequestMethod.GET, value = "/displaymember/{blockNumber}")
-	@CrossOrigin(origins = "http://localhost:9000")
 	public ApartmentMember displayMember(@PathVariable String blockNumber) {
 		logger.info("In displaymember method:");
 		ApartmentMember apartmentMember = aptRepository.findOne(blockNumber);
@@ -113,10 +111,10 @@ public class ApartmentMemberController {
 	}
 
 	/**
+	 * 
 	 * GET /display --> display all the member by blockNumber from the database.
 	 */
 	@RequestMapping(method = RequestMethod.GET, value = "/displayallmembers")
-	@CrossOrigin(origins = "http://localhost:9000")
 	public List<ApartmentMember> displayAllMembers() {
 		logger.info("In displayallmembers method:");
 		List<ApartmentMember> apartmentMemberList = aptRepository
